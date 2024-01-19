@@ -1,0 +1,40 @@
+
+<style>
+    .logo{
+        text-decoration: none;
+        color: rgb(53, 53, 53);
+        
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: fantasy;
+        flex-direction: column;
+        text-decoration: none;
+        
+    }
+    .bg {
+        position: fixed; 
+        top: -50%; 
+        left: -50%; 
+        width: 200%; 
+        height: 200%;
+        z-index: -1;
+    }
+</style>
+<body>
+<div class = "bg">
+<img src="../static/styles/luxe.png">
+</div>
+<h1><a href="/" class = "logo">Luxe Palate</a></h1>
+<h1 class="pt-3">Update {{reservation.name}}'s Reservation</h1>  
+<form action="" method="post">
+{% csrf_token %} 
+{{form.as_p}} 
+<input type="submit" value="Submit" />
+</form>
+</body>

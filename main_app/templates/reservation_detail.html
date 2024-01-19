@@ -1,0 +1,122 @@
+
+
+<style>
+    body {
+        margin: 150px;
+        padding: 0;
+        display: flex;
+        
+        align-items: center;
+        height: 100vh;
+        font-family: fantasy;
+        
+    }
+
+    .logo {
+        align-items: flex-end;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+
+    }
+    .bg {
+        position: fixed; 
+        top: -50%; 
+        left: -50%; 
+        width: 200%; 
+        height: 200%;
+        z-index: -1;
+    }
+    .bg img {
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        margin: auto; 
+        min-width: 50%;
+        min-height: 50%;
+        z-index: -1;
+    }
+    .form-container {
+        background-color: #f8f8f8;
+        padding:55px;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-container label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="date"],
+    .form-container input[type="time"],
+    .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .form-container textarea {
+        resize: vertical;
+        height: 100px;
+    }
+    
+    .form-container input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .form-container input[type="submit"]:hover {
+        background-color: #555;
+    }
+    .find {
+        text-decoration: none;
+        color: black;
+        justify-content: center;
+        display: flex;
+    }
+</style>
+<body>
+<div class = "bg">
+<img src="../static/styles/luxe.png">
+</div> 
+<div class = "form-container">
+<div class><a href="/" class = "logo">Luxe Palate</a></div>
+
+<hr>
+<h1 class="title">{{reservation.name}}</h1>
+<div class = "info">
+{{reservation.date}}
+{{reservation.time}}
+</p>
+</div>
+<div class="detail__container">
+<div class="buttons">
+    <a href="{% url 'reservation_update' reservation.pk %}" class="button is-info"> Update
+        <span class="icon">
+            <i class="fas fa-edit"></i>
+        </span>
+    </a>
+    |
+    <a href="{% url 'reservation_delete' reservation.pk %}" class="button is-danger">Delete
+        <span class="icon">
+            <i class="fas fa-trash-alt"></i>
+        </span>
+    </a>
+</div>
+</div>
+</div>
+</body>

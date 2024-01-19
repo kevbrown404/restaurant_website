@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <script src="{% static 'scripts/main.js' %}" defer></script>    
+    <title>Luxe Palate</title>
+    <style>
+        .logo{
+            text-decoration: none;
+            color: rgb(53, 53, 53);
+            
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: fantasy;
+            flex-direction: column;
+            text-decoration: none;
+            
+        }
+        .bg {
+            position: fixed; 
+            top: -50%; 
+            left: -50%; 
+            width: 200%; 
+            height: 200%;
+            z-index: -1;
+        }
+        .bg img {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            margin: auto; 
+            min-width: 50%;
+            min-height: 50%;
+            z-index: -1;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class = "bg">
+        <img src="../static/styles/luxe.png">
+    </div>
+    <h1><a href="/" class = "logo">Luxe Palate</a></h1>
+    <div class="navbar">
+        
+        <a href="/view_menu">View Menu</a>
+        <a href="/reservation/new">Make Reservations</a>
+        <a href="/leave_review">Leave Review</a>
+    </div>
+</body>
+</html>
+</head>
+<body>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

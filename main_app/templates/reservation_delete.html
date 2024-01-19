@@ -1,0 +1,10 @@
+<h1 class="title pt-5">Delete Reservation for {{reservation.name}}?</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="buttons">
+    <!-- confirm reservation delete -->
+        <input class="button is-danger" type="submit" value="Confirm" />
+        <!-- Redirect back to detail on cancel -->
+        <a class="button is-primary" href="{% url 'reservation_detail' reservation.pk %}">Cancel</a>
+    </div>
+</form>
